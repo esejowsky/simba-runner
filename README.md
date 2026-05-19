@@ -1,78 +1,78 @@
 # simba-runner
 
-> Endless runner gdzie kot jest bohaterem, parallax tłem, a strona 404 — sceną.
+> An endless runner where a cat is the hero, parallax is the backdrop, and the 404 page is the stage.
 
 [![status](https://img.shields.io/badge/status-live-success)]() [![version](https://img.shields.io/badge/version-2.0-blue)]() [![deps](https://img.shields.io/badge/deps-0-7c4dff)]() [![runtime](https://img.shields.io/badge/runtime-vanilla%20JS-yellow)]() [![size](https://img.shields.io/badge/size-18%20KB-green)]() [![license](https://img.shields.io/badge/license-MIT-green)]()
 
-Każda strona ma 404. Większość 404 to *"Strona nie istnieje, zawróć"*. Moja 404 to **arcade z kotem**. Bo Simba zasługuje na coś więcej niż leniwe spanie na klawiaturze (chociaż to też lubi).
+Every site has a 404. Most 404s say *"Page not found, go back."* Mine is an **arcade with a cat**. Because Simba deserves more than lazy naps on the keyboard (although he's good at those too).
 
-▶ **Play now:** [esej.space/404](https://esej.space/404) (tak, zamierzone 404)
+▶ **Play now:** [esej.space/404](https://esej.space/404) (yes, the 404 is on purpose)
 🔗 **Project page:** [esej.space/projekty/simba-runner](https://esej.space/projekty/simba-runner/)
 
 ---
 
 ## 🎯 About
 
-Simba — maine coon, 7 kg żywego protestu przeciwko ludzkim deadline'om.
+Simba — maine coon, 7 kg of living protest against human deadlines.
 
-Pomysł: endless runner w stylu Chrome dino, ale:
-- **na 404 page** — strona błędu nie musi być nudna
-- **z kotem zamiast dinozaura** — Simba jest fotogeniczniejszy niż T-Rex
-- **z parallax tłem** — bez parallax to byłaby kolejna gra dino
-- **z power-upami** — każda gra zasługuje na shield, magnet, slow-mo
-- **z leaderboardem** — bez konkurencji nie ma motywacji
+The pitch: a Chrome-dino-style endless runner, but:
+- **on the 404 page** — an error page doesn't have to be boring
+- **with a cat instead of a dinosaur** — Simba is more photogenic than a T-Rex
+- **with a parallax background** — without parallax it's just another dino clone
+- **with power-ups** — every game deserves a shield, a magnet, and slow-mo
+- **with a leaderboard** — without competition, there's no motivation
 
 ## ✨ Features
 
-- 🐈 **Simba jako protagonista** — biegnie, skacze, łapie power-upy, czasem ginie
-- 🏔️ **Parallax background** — góry + sylwetka miasta + dryfujące chmury
-- ⭐ **Particle effects** — przy zbieraniu, śmierci, milestone'ach
-- 🌅 **Day-night cycle** co 1100m — niebo zmienia gradient, gwiazdy w nocy
-- 💎 **5 power-upów** — TARCZA / MAGNES / x2 / SLOW-MO / BOOST
-- 🏆 **Leaderboard top 50** w `localStorage`
-- 💾 **Zero backend** — wszystko client-side, działa offline po pierwszym load
-- 📱 **Touch controls** — tap to jump na mobile
+- 🐈 **Simba as the protagonist** — runs, jumps, grabs power-ups, occasionally dies
+- 🏔️ **Parallax background** — mountains + city silhouette + drifting clouds
+- ⭐ **Particle effects** — on pickups, deaths, and 1000m milestones
+- 🌅 **Day-night cycle** every 1100m — sky shifts gradient, stars twinkle at night
+- 💎 **5 power-ups** — SHIELD / MAGNET / x2 / SLOW-MO / BOOST
+- 🏆 **Top 50 leaderboard** in `localStorage`
+- 💾 **Zero backend** — fully client-side, works offline after first load
+- 📱 **Touch controls** — tap to jump on mobile
 
 ## 💎 Power-ups
 
-| icon | nazwa | czas | efekt |
+| icon | name | duration | effect |
 |---|---|---|---|
-| 🛡️ | TARCZA | 8s | Jeden hit i tarcza znika, ale Simba żyje |
-| 🧲 | MAGNES | 10s | Wszystkie monety w promieniu 200px przyciągane |
-| ×2 | DOUBLE POINTS | 12s | Każdy punkt liczy się podwójnie |
-| 🐌 | SLOW-MO | 5s | Świat zwalnia 2x, Simba normalnie |
-| 🚀 | BOOST | 3s | Simba sprintem, 3x prędkość |
+| 🛡️ | SHIELD | 8s | One hit and the shield's gone, but Simba lives |
+| 🧲 | MAGNET | 10s | All coins within 200px get pulled in |
+| ×2 | DOUBLE POINTS | 12s | Every point counts twice |
+| 🐌 | SLOW-MO | 5s | World slows to 0.5x, Simba doesn't |
+| 🚀 | BOOST | 3s | Simba sprints at 3x base speed |
 
 ## 🎮 Controls
 
-| akcja | klawisz | touch |
+| action | key | touch |
 |---|---|---|
-| skok | `Space` lub `↑` | tap |
-| podwójny skok | 2× `Space` | 2× tap |
-| schylenie | `↓` | swipe down |
-| pause | `P` lub `Esc` | — |
+| jump | `Space` or `↑` | tap |
+| double jump | 2× `Space` | 2× tap |
+| crouch | `↓` | swipe down |
+| pause | `P` or `Esc` | — |
 | restart | `R` | tap on game over |
 
-**Save modal:** `Space`/`Enter` submit · `Esc` skip · nick bez spacji.
+**Save modal:** `Space`/`Enter` to submit · `Esc` to skip · no spaces in nick.
 
 ## 🛠️ Stack
 
 | layer | what | why |
 |---|---|---|
-| engine | vanilla JS + Canvas 2D | endless runner nie potrzebuje WebGL ani Unity |
-| render | `requestAnimationFrame` | 60 FPS na każdym sprzęcie od 2010 |
-| storage | `localStorage` (`simba_leaderboard_v2`) | zero backend, zero kosztów |
-| physics | własny (gravity + collision boxes) | ~50 linii kodu, działa |
-| assets | SVG inline + emoji | brak HTTP requestów |
+| engine | vanilla JS + Canvas 2D | an endless runner doesn't need WebGL or Unity |
+| render | `requestAnimationFrame` | 60 FPS on anything built since 2010 |
+| storage | `localStorage` (`simba_leaderboard_v2`) | zero backend, zero cost |
+| physics | custom (gravity + AABB collisions) | ~50 lines of code, gets the job done |
+| assets | inline SVG + emoji | no HTTP requests for graphics |
 
 ## 📜 Changelog
 
 **v2.0** — 2026-05-19 — *Power-up Edition*
-- 5 power-upów (TARCZA / MAGNES / x2 / SLOW-MO / BOOST)
-- Parallax background (góry + miasto + chmury)
+- 5 power-ups (SHIELD / MAGNET / x2 / SLOW-MO / BOOST)
+- Parallax background (mountains + city + clouds)
 - Particle effects
-- Day-night cycle co 1100m
-- Save modal z Space/Enter/Esc
+- Day-night cycle every 1100m
+- Save modal with Space/Enter/Esc
 
 **v1.0** — Initial release
 - Endless runner core gameplay
@@ -82,16 +82,16 @@ Pomysł: endless runner w stylu Chrome dino, ale:
 ## 🗺️ Roadmap
 
 - **v2.1 Polish** — sound effects, music toggle, settings panel, colorblind mode
-- **v2.2 Biomes** — las (firefly nocą), kosmos (lower gravity), random rotation co 1500m
-- **v2.3 Enemies** — drony, pies sąsiada, boss = odkurzacz Roomba co 3000m
+- **v2.2 Biomes** — forest (fireflies at night), space (lower gravity), rotation every 1500m
+- **v2.3 Enemies** — drones, the neighbor's dog, boss = Roomba every 3000m
 - **v3.0 Global LB** — REST endpoint, anti-cheat, daily challenges
 
 ## 📜 License
 
-MIT. Bierz, modyfikuj, host na własnym 404.
+MIT. Take it, modify it, host it on your own 404.
 
 ---
 
-> *Simba nigdy nie zagrał w simba-runner. Twierdzi że to obraźliwe — kot nie biega 12km bez powodu.*
+> *Simba has never played simba-runner. Says it's offensive — cats don't run 12km without a reason.*
 
 [esej.space](https://esej.space) · [@esejowsky](https://github.com/esejowsky)
